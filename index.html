@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="site-version" content="v20261020-4">
 <title>深圳市诚达通运货运代理有限公司 · 日本专线物流官网</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230F2A4A'/%3E%3Cpath d='M14 42 Q 32 18 50 42' stroke='%23F26A21' stroke-width='7' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='14' cy='42' r='7' fill='%23FFFFFF'/%3E%3Ccircle cx='50' cy='42' r='7' fill='%23F26A21'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap">
@@ -56,6 +60,7 @@ a{color:inherit;text-decoration:none}
 .mobile-menu a{display:block;padding:13px 22px;font-size:16px;font-weight:500;color:var(--ink);border-left:3px solid transparent}
 .mobile-menu a.active{color:var(--blue);font-weight:700;border-left-color:var(--blue);background:var(--blue-soft)}
 .mobile-menu .m-tel{margin:12px 22px 6px}
+.mobile-menu .m-tel .btn-tel{display:flex;justify-content:center;width:100%;color:#fff;border-left:none;font-size:15px;padding:14px 18px}
 
 /* ===== 视图 ===== */
 .view{display:none}
@@ -81,6 +86,58 @@ a{color:inherit;text-decoration:none}
 .hero h1 .hl{color:#FFB27A}
 .hero p.lead{font-size:16.5px;line-height:1.8;color:rgba(255,255,255,.88);max-width:560px;margin-bottom:30px;opacity:0;animation:fadeUp .7s .4s ease forwards}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.track-box{
+  display:flex;gap:0;background:#fff;border-radius:12px;overflow:hidden;
+  box-shadow:0 18px 44px rgba(0,0,0,.28);margin-bottom:14px;
+  opacity:0;animation:fadeUp .7s .35s ease forwards;
+}
+.track-input{flex:1;display:flex;align-items:center;gap:10px;padding:0 16px;min-width:0}
+.track-input svg{width:19px;height:19px;flex:none;stroke:var(--text);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.track-input input{
+  flex:1;border:none;outline:none;font-family:inherit;font-size:15px;color:var(--ink);
+  padding:16px 0;background:transparent;min-width:0;
+}
+.track-input input::placeholder{color:#9AA6B5}
+.track-btn{
+  flex:none;background:var(--orange);color:#fff;border:none;cursor:pointer;
+  font-family:inherit;font-weight:700;font-size:15px;padding:0 26px;
+  transition:background .2s;
+}
+.track-btn:hover{background:var(--orange-deep)}
+.track-page{opacity:1;animation:none;box-shadow:0 10px 30px rgba(11,43,82,.10);margin-bottom:18px}
+.track-page .track-input input{padding:18px 0;font-size:16px}
+.track-page .track-btn{padding:0 32px;font-size:16px}
+#track .track-result{box-shadow:0 10px 30px rgba(11,43,82,.10);border:1px solid var(--line);max-width:680px;margin-left:auto;margin-right:auto}
+/* 批量查询多行大框 */
+.track-box-multi{flex-direction:column;align-items:stretch;max-width:680px;margin-left:auto;margin-right:auto}
+.track-box-multi .track-input{padding:16px 18px 4px;align-items:flex-start}
+.track-box-multi .track-input svg{margin-top:6px}
+.track-box-multi textarea{
+  flex:1;border:none;outline:none;font-family:inherit;font-size:15px;color:var(--ink);
+  background:transparent;min-width:0;min-height:180px;resize:vertical;line-height:1.6;
+}
+.track-box-multi textarea::placeholder{color:#9AA6B5}
+.track-box-multi .track-btn{padding:14px 0;font-size:16px;width:100%}
+.track-result-item{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.track-result-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.track-result{
+  background:#fff;border-radius:12px;box-shadow:0 18px 44px rgba(0,0,0,.28);
+  padding:22px;margin-bottom:14px;text-align:left;
+  animation:fadeUp .4s ease;
+}
+.track-result h4{font-size:15px;font-weight:900;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between}
+.track-result .status-tag{font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;background:#E8F5E9;color:#2E7D32}
+.track-result .status-tag.transit{background:#E3F2FD;color:#1565C0}
+.track-result .status-tag.error{background:#FFEBEE;color:#C62828}
+.track-timeline{position:relative;padding-left:22px}
+.track-timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:#E3E9F1}
+.track-item{position:relative;padding-bottom:16px}
+.track-item:last-child{padding-bottom:0}
+.track-item::before{content:'';position:absolute;left:-20px;top:6px;width:10px;height:10px;border-radius:50%;background:#C5CFDD;border:2px solid #fff;box-shadow:0 0 0 2px #E3E9F1}
+.track-item.latest::before{background:var(--orange);box-shadow:0 0 0 2px rgba(242,106,33,.3)}
+.track-item .t-time{font-size:12px;color:var(--text);margin-bottom:2px}
+.track-item .t-text{font-size:14px;color:var(--ink);line-height:1.5}
+.track-empty{padding:30px;text-align:center;color:var(--text);font-size:14px}
 .hero-entry{
   display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff;border-radius:12px;
   box-shadow:0 18px 44px rgba(0,0,0,.28);overflow:hidden;
@@ -210,6 +267,14 @@ a{color:inherit;text-decoration:none}
 .footer .f-brand img{height:32px;width:auto;display:block}
 .footer .f-brand b{color:#fff;font-size:16px}
 .footer-slogan{color:#FFB27A !important;font-weight:700}
+.footer-qr{display:flex;align-items:center;gap:14px;margin-top:6px}
+.qr-mini{
+  width:88px;height:88px;border:1px dashed rgba(255,255,255,.3);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);
+  background:rgba(255,255,255,.05);flex:none;
+}
+.footer-qr p{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5}
+.footer-qr small{font-size:11px;color:rgba(255,255,255,.4)}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:34px;padding-top:20px;text-align:center;font-size:13px;color:rgba(255,255,255,.5)}
 
 /* ===== 悬浮快捷按钮 ===== */
@@ -247,6 +312,13 @@ a{color:inherit;text-decoration:none}
 .field input,.field textarea{width:100%;font-size:16px;font-family:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);transition:border-color .2s,box-shadow .2s}
 .field input:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(27,111,224,.12)}
 .field textarea{min-height:110px;resize:vertical}
+.qr-placeholder{
+  width:200px;height:200px;margin:0 auto;border:2px dashed #C5CFDD;border-radius:12px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  color:#8A96A8;background:var(--bg-soft);
+}
+.qr-placeholder p{font-size:14px;font-weight:700;text-align:center;line-height:1.5}
+.qr-placeholder small{font-size:12px;font-weight:400;color:#A8B2C0}
 
 /* ===== 时间轴 ===== */
 .timeline{display:grid;grid-template-columns:1fr;gap:0}
@@ -327,6 +399,7 @@ a{color:inherit;text-decoration:none}
       <a href="#about" data-nav="about">关于我们</a>
       <a href="#services" data-nav="services">核心服务</a>
       <a href="#process" data-nav="process">货运流程</a>
+      <a href="#track" data-nav="track">运单查询</a>
       <a href="#contact" data-nav="contact">联系我们</a>
     </nav>
     <div class="nav-right">
@@ -345,6 +418,7 @@ a{color:inherit;text-decoration:none}
     <a href="#about" data-nav="about">关于我们</a>
     <a href="#services" data-nav="services">核心服务</a>
     <a href="#process" data-nav="process">货运流程</a>
+    <a href="#track" data-nav="track">运单查询</a>
     <a href="#contact" data-nav="contact">联系我们</a>
     <div class="m-tel"><a class="btn-tel" href="tel:13826569293">电话咨询 13826569293</a></div>
   </div>
@@ -360,10 +434,17 @@ a{color:inherit;text-decoration:none}
       <span class="hero-tag">中日跨境物流 · 日本专线</span>
       <h1>信诚则达<br><span class="hl">全心服务</span></h1>
       <p class="lead">深耕日本专线十八年，为跨境电商提供空运、海运、小包与海外仓一站式物流解决方案。单票清关，税金透明，日本全境可达。</p>
+      <div class="track-box track-page track-box-multi">
+        <div class="track-input">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <textarea id="homeTrackNo" rows="3" placeholder="每行输入一个运单号 / 追踪号，最多20个"></textarea>
+        </div>
+        <button class="track-btn" id="homeTrackBtn">查轨迹</button>
+      </div>
       <div class="hero-entry">
-        <a class="entry-btn hl" href="tel:13826569293">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span class="eb-txt">我要寄件<small>电话 / 微信咨询</small></span>
+        <a class="entry-btn hl" href="#track" data-nav="track">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <span class="eb-txt">运单查询<small>输入单号追踪轨迹</small></span>
         </a>
         <a class="entry-btn" href="#services" data-nav="services">
           <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -373,9 +454,9 @@ a{color:inherit;text-decoration:none}
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
           <span class="eb-txt">货运流程<small>八步标准出货</small></span>
         </a>
-        <a class="entry-btn" href="#contact" data-nav="contact">
-          <svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span class="eb-txt">联系我们<small>获取专属物流方案</small></span>
+        <a class="entry-btn" href="tel:13826569293">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="eb-txt">我要寄件<small>电话 / 微信咨询</small></span>
         </a>
       </div>
     </div>
@@ -713,6 +794,27 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
+<!-- ===== 视图：运单查询 ===== -->
+<section class="view" id="track" data-view="track">
+  <div class="hero track-hero" style="min-height:auto">
+    <div class="hero-bg" style="animation:none"><img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/ZRo1b6HCxoWMEFxHc5pcjk3TnQh" alt="港口全景"></div>
+    <div class="hero-veil"></div>
+    <div class="hero-inner track-inner" style="padding:110px 20px 50px">
+      <span class="hero-tag">Track &amp; Trace</span>
+      <h1 style="font-size:32px;margin-bottom:8px">运单查询</h1>
+      <p class="lead" style="margin-bottom:22px;font-size:16px">输入运单号 / 追踪号，实时查询货物运输轨迹</p>
+      <div class="track-box track-page track-box-multi">
+        <div class="track-input">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <textarea id="trackNo" rows="4" placeholder="每行输入一个运单号 / 追踪号，最多20个"></textarea>
+        </div>
+        <button class="track-btn" id="trackBtn">查轨迹</button>
+      </div>
+      <div class="track-result" id="trackResult" style="display:none"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== 视图：联系我们 ===== -->
 <section class="view" id="contact" data-view="contact">
   <div class="hero" style="min-height:auto">
@@ -746,15 +848,12 @@ a{color:inherit;text-decoration:none}
           </div>
         </div>
         <div class="form-card reveal d2">
-          <h3>在线咨询</h3>
-          <p class="sub">填写需求后请直接通过电话或微信联系，我们会尽快响应</p>
-          <form id="contactForm">
-            <div class="field"><label for="cfName">您的称呼</label><input type="text" id="cfName" placeholder="怎么称呼您" required></div>
-            <div class="field"><label for="cfContact">联系电话 / 微信</label><input type="text" id="cfContact" placeholder="方便我们联系您" required></div>
-            <div class="field"><label for="cfMsg">货物需求</label><textarea id="cfMsg" placeholder="如：深圳到日本大阪空运，每周2票，货量约500kg/票"></textarea></div>
-            <button class="btn btn-primary" type="submit" style="width:100%">提交咨询意向</button>
-            <p id="formTip" style="display:none;margin-top:12px;font-size:14px;color:var(--blue);font-weight:700;text-align:center">已记录您的需求，请拨打 13826569293 或添加微信确认，谢谢</p>
-          </form>
+          <h3>扫码添加微信咨询</h3>
+          <p class="sub">微信同号：13826569293</p>
+          <div class="qr-placeholder" style="border-style:solid;border-color:#E3E9F1;background:#fff;padding:10px">
+            <img src="https://aka.doubaocdn.com/s/Qa62o7pN1E" alt="张志敏微信二维码" style="width:100%;height:100%;object-fit:contain;border-radius:6px">
+          </div>
+          <p style="font-size:14px;color:var(--text);text-align:center;margin-top:14px">扫码添加张志敏微信，<br>获取专属日本专线物流方案报价</p>
         </div>
       </div>
     </div>
@@ -805,6 +904,15 @@ a{color:inherit;text-decoration:none}
         <p>电话 / 微信：<a href="tel:13826569293">13826569293</a></p>
         <p>地址：深圳市宝安区航城街道后瑞社区瑞康路9号一楼</p>
       </div>
+      <div>
+        <h4>扫码联系</h4>
+        <div class="footer-qr">
+          <div class="qr-mini" style="border-style:solid;border-color:rgba(255,255,255,.2);background:#fff;padding:4px">
+            <img src="https://aka.doubaocdn.com/s/Qa62o7pN1E" alt="微信二维码" style="width:100%;height:100%;object-fit:contain;border-radius:3px">
+          </div>
+          <p>扫码添加微信<br><small>张志敏 13826569293</small></p>
+        </div>
+      </div>
     </div>
     <div class="footer-bottom">© 2026 深圳市诚达通运货运代理有限公司 版权所有</div>
   </div>
@@ -812,6 +920,27 @@ a{color:inherit;text-decoration:none}
 
 <script>
 (function(){
+  /* 自动更新：无需手动刷新，检测到新版自动重载 */
+  (function autoUpdate(){
+    if(location.protocol.indexOf('http')!==0) return; /* file:// 本地预览跳过 */
+    function curVer(){var m=document.querySelector('meta[name="site-version"]');return m?m.content:'';}
+    function check(){
+      try{
+        fetch(location.pathname+'?v='+Date.now(),{cache:'no-store',headers:{'Cache-Control':'no-cache'}})
+        .then(function(r){return r.text();})
+        .then(function(html){
+          var mm=html.match(/<meta\s+name="site-version"\s+content="([^"]+)"/);
+          var newVer=mm?mm[1]:'';
+          if(newVer && newVer!==curVer()){
+            location.replace(location.pathname+'?v='+Date.now()+location.hash);
+          }
+        }).catch(function(){});
+      }catch(e){}
+    }
+    setTimeout(check,2500);
+    setInterval(check,60000);
+  })();
+
   var views = document.querySelectorAll('.view');
   var navLinks = document.querySelectorAll('[data-nav]');
   var mobileMenu = document.getElementById('mobileMenu');
@@ -826,6 +955,16 @@ a{color:inherit;text-decoration:none}
     if(navToggle) navToggle.setAttribute('aria-expanded','false');
     window.scrollTo(0,0);
     observeReveals();
+    if(name === 'track'){
+      try{
+        var pending = sessionStorage.getItem('pendingTrack');
+        if(pending){
+          sessionStorage.removeItem('pendingTrack');
+          var t = document.getElementById('trackNo');
+          if(t){ t.value = pending; doTrack(); }
+        }
+      }catch(e){}
+    }
   }
 
   function route(){
@@ -895,6 +1034,89 @@ a{color:inherit;text-decoration:none}
   var toTop = document.getElementById('toTop');
   if(toTop){
     toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior: reduced ? 'auto' : 'smooth'}); });
+  }
+  var trackBtn = document.getElementById('trackBtn');
+  if(trackBtn){
+    var trackResult = document.getElementById('trackResult');
+    var statusMap = {
+      '-1':{text:'单号不存在',cls:'error'},
+      '1':{text:'已入仓',cls:''},'2':{text:'已入仓',cls:''},
+      '3':{text:'已上网',cls:'transit'},'4':{text:'已揽收',cls:'transit'},
+      '5':{text:'运输中',cls:'transit'},'6':{text:'已签收',cls:''},
+      '10':{text:'已退件',cls:'error'}
+    };
+    function renderItem(item){
+      var st = statusMap[item.returnStatus] || {text:'运输中',cls:'transit'};
+      var showNo = item.waybillCode || item.preBillCode || '';
+      var html = '<h4>运单：'+showNo+' <span class="status-tag '+st.cls+'">'+st.text+'</span></h4>';
+      if(item.details && item.details.length){
+        var list = item.details.slice().sort(function(a,b){
+          return new Date(b.createTime).getTime() - new Date(a.createTime).getTime();
+        });
+        html += '<div class="track-timeline">';
+        for(var i=0;i<list.length;i++){
+          var d = list[i];
+          var loc = d.location ? ' · '+d.location : '';
+          html += '<div class="track-item'+(i===0?' latest':'')+'">';
+          html += '<div class="t-time">'+(d.createTime||'')+'</div>';
+          html += '<div class="t-text">'+(d.description||d.context||d.remark||'轨迹更新')+loc+'</div>';
+          html += '</div>';
+        }
+        html += '</div>';
+      } else {
+        html += '<div class="track-empty">轨迹详情更新中…</div>';
+      }
+      return html;
+    }
+    function doTrack(){
+      var raw = document.getElementById('trackNo').value.trim();
+      var codes = raw.split(/[\s,，、;；]+/).map(function(s){return s.trim();}).filter(function(s){return s;});
+      var seen = {};
+      codes = codes.filter(function(c){ if(seen[c]) return false; seen[c]=true; return true; });
+      if(!codes.length){ trackResult.style.display='block'; trackResult.innerHTML='<div class="track-empty">请输入运单号，每行一个</div>'; return; }
+      if(codes.length > 20){ trackResult.style.display='block'; trackResult.innerHTML='<div class="track-empty">最多一次查询 20 个单号</div>'; return; }
+      trackResult.style.display='block';
+      trackResult.innerHTML='<div class="track-empty">正在查询 '+codes.length+' 个运单，请稍候…</div>';
+      fetch('https://business.logistic.mobi/api/WayBillTrackInfo/GetTracksNoAuthAsync?branchId=725',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(codes)
+      })
+      .then(function(r){return r.json();})
+      .then(function(res){
+        if(!res.data || !res.data.length){ trackResult.innerHTML='<div class="track-empty">未查询到任何运单信息</div>'; return; }
+        var found = {}, html = '';
+        res.data.forEach(function(item){
+          if(item.returnStatus === -1 || item.returnStatus === undefined) return;
+          found[item.waybillCode || item.preBillCode] = true;
+          html += '<div class="track-result-item">'+renderItem(item)+'</div>';
+        });
+        var missing = codes.filter(function(c){ return !found[c]; });
+        if(missing.length){
+          html += '<div class="track-empty">未找到：'+missing.join('、')+'</div>';
+        }
+        trackResult.innerHTML = html || '<div class="track-empty">查询到的运单暂无轨迹信息</div>';
+      })
+      .catch(function(e){
+        trackResult.innerHTML='<div class="track-empty">查询失败，请稍后重试或致电 13826569293</div>';
+      });
+    }
+    trackBtn.addEventListener('click', doTrack);
+    document.getElementById('trackNo').addEventListener('keydown', function(e){
+      if(e.key === 'Enter' && (e.ctrlKey || e.metaKey)){ e.preventDefault(); doTrack(); }
+    });
+  }
+
+  /* 主页搜索框：查询后跳到轨迹页 */
+  var homeTrackBtn = document.getElementById('homeTrackBtn');
+  if(homeTrackBtn){
+    homeTrackBtn.addEventListener('click', function(){
+      var v = document.getElementById('homeTrackNo').value.trim();
+      if(!v){ alert('请输入运单号'); return; }
+      try{ sessionStorage.setItem('pendingTrack', v); }catch(e){}
+      location.hash = 'track';
+      showView('track');
+    });
   }
 
   /* 表单 */
